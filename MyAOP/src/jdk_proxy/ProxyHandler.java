@@ -2,16 +2,14 @@ package jdk_proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
-import Model.Bird;
-import interceptor.Inteceptor;
+import interceptor.Interceptor;
 
 public class ProxyHandler implements InvocationHandler{
 
 	private Object target;
 	
-	private	Inteceptor method;
+	private	Interceptor interceptor;
 	
 	public Object getTarget(){
 		return this.target;
@@ -22,25 +20,19 @@ public class ProxyHandler implements InvocationHandler{
 	 * @param obj     原对象
 	 * @param method  插件
 	 * @param method
-	 */
-	public ProxyHandler(Object obj, Inteceptor method) {
+	 */ 
+	public ProxyHandler(Object obj, Interceptor interceptor) {
 		this.target = obj;
-		this.method = method;
+		this.interceptor = interceptor;
 	}
 	
 	
 	
 	//拦截targer内的方法！！！
-	//tager 对象的所有方法都要调用这个方法。
+	//target 对象的所有方法都要调用这个方法。
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println(proxy.getClass());
-		//before
-		this.method.before(proxy, method, args);
-		Bird b = (Bird)target;
-		b.fly();
-		//after
-		this.method.after(proxy, method, args);
-		return "这才是返回值！";
+		this.target = this.interceptor.intercept(target, method, args);//todo 这里处理target
+		return target;
 	}
 }

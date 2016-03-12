@@ -3,7 +3,7 @@ package Test;
 import Model.Bird;
 import Model.Flamingo;
 import annotation.AnnotationInjection;
-import interceptor.Inteceptor;
+import interceptor.Interceptor;
 import jdk_proxy.ProxyFactory;
 import jdk_proxy.ProxyHandler;
 
@@ -23,7 +23,7 @@ public class TestAop {
 		AnnotationInjection aj = new AnnotationInjection();
 		//通过注解注入了属性
 		fm = (Bird)aj.getBean(fm);
-		Bird proxyFl = (Bird) ProxyFactory.newInstance(new ProxyHandler(fm, new Inteceptor()));
+		Bird proxyFl = (Bird) ProxyFactory.newInstance(new ProxyHandler(fm, new Interceptor()));
 		System.out.println(proxyFl.fly());
 	}
 }
