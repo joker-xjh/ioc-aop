@@ -2,13 +2,9 @@ package furioussoul.test;
 
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlAccessOrder;
-
 import org.junit.Test;
 
 import furioussoul.ioc.beans.bean.BeanDefinition;
-import furioussoul.ioc.beans.bean.PropertyValue;
-import furioussoul.ioc.beans.bean.PropertyValues;
 import furioussoul.ioc.beans.bean.factory.AutowireCapableBeanFactory;
 import furioussoul.ioc.beans.bean.factory.BeanFactory;
 import furioussoul.ioc.beans.bean.io.ResourceLoader;
