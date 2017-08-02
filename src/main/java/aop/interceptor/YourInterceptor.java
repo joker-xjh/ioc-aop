@@ -1,4 +1,4 @@
-package aop.jdkproxy;
+package aop.interceptor;
 
 import aop.interceptor.Interceptor;
 
