@@ -1,10 +1,5 @@
 package ioc.xml;
 
-import java.io.InputStream;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import bean.BeanDefinition;
 import bean.PropertyValue;
 import injection.BeanReference;
@@ -13,6 +8,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.InputStream;
 
 /**
  * 获取存储在xml中的bean定义的reader

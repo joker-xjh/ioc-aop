@@ -1,7 +1,5 @@
 package aop.interceptor;
 
-import aop.interceptor.Interceptor;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
